@@ -1,0 +1,19 @@
+# Arquivos de compilação
+*.pyc
+__pycache__/
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Ambiente virtual
+venv/
+env/
+
+# Arquivos de dados
+*.xlsx
+
+# Configurações do sistema
+.DS_Store
+Thumbs.db
