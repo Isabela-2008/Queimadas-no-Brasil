@@ -1,0 +1,57 @@
+Enunciado do Projeto
+Título: Análise de Queimadas no Brasil (2023-2024)
+
+Objetivo: Este projeto tem como objetivo analisar os dados sobre queimadas no Brasil e na América do Sul para o ano de 2024. A análise visa entender a evolução dos focos de incêndio, avaliar os prejuízos econômicos associados e examinar a distribuição regional dos focos de incêndio. O estudo busca fornecer insights que ajudem na formulação de estratégias de prevenção e mitigação de queimadas.
+
+Descrição: O projeto utiliza uma planilha Excel contendo dados sobre focos de incêndio, prejuízos econômicos e áreas afetadas. A análise é realizada com as bibliotecas Python pandas, numpy, matplotlib e seaborn, e inclui a criação de gráficos que ilustram a evolução dos incêndios, a comparação de prejuízos econômicos e a distribuição dos focos de incêndio na América do Sul.
+
+Resultados Esperados: O projeto resultará em gráficos e relatórios que demonstram a tendência dos focos de incêndio, os impactos econômicos e a distribuição regional dos incêndios.
+
+Análise de Queimadas no Brasil (2023-2024)
+Descrição
+Este projeto analisa os dados sobre queimadas no Brasil e na América do Sul para o ano de 2024. Utilizando a biblioteca pandas para manipulação de dados e matplotlib e seaborn para visualização, o projeto visa entender a evolução dos focos de incêndio, os prejuízos econômicos associados e a distribuição regional dos focos.
+
+Estrutura do Projeto
+queimadas_brasil_2024.xlsx: Arquivo Excel contendo os dados sobre queimadas.
+análise_queimadas.py: Script Python que realiza a análise dos dados e gera gráficos.
+README.md: Este arquivo de documentação.
+.gitignore: Arquivo para ignorar arquivos desnecessários no controle de versão.
+Como Executar o Código
+Clonar o Repositório
+
+Clone este repositório para o seu ambiente local:
+
+bash
+Copiar código
+git clone https://github.com/seu-usuario/analise-queimadas.git
+cd analise-queimadas
+Instalar Dependências
+
+Certifique-se de que você tem o Python instalado. Instale as bibliotecas necessárias usando pip:
+
+bash
+Copiar código
+pip install pandas numpy matplotlib seaborn openpyxl
+Configurar o Caminho do Arquivo
+
+Atualize o caminho do arquivo no script análise_queimadas.py para corresponder ao local onde o arquivo queimadas_brasil_2024.xlsx está salvo no seu sistema. Substitua a linha:
+
+python
+Copiar código
+file_path = r'C:\Users\Aluno06\Downloads\queimadas_brasil_2024.xlsx'
+pelo caminho correto.
+
+Executar o Script
+
+Execute o script para gerar os gráficos e a análise:
+
+bash
+Copiar código
+python análise_queimadas.py
+Estrutura dos Arquivos
+queimadas_brasil_2024.xlsx: Dados sobre queimadas.
+análise_queimadas.py: Código para análise dos dados e geração de gráficos.
+README.md: Documentação do projeto.
+.gitignore: Arquivo de configuração para ignorar arquivos não desejados no controle de versão.
+Contribuições
+Contribuições são bem-vindas! Se você tiver sugestões ou melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
