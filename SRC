@@ -1,0 +1,65 @@
+# Importando as bibliotecas necessárias
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Definindo o caminho absoluto do arquivo
+file_path = r'C:\Users\Aluno06\Downloads\queimadas_brasil_2024.xlsx'
+
+# Importando os dados da planilha Excel
+df = pd.read_excel(file_path)
+
+# Visualizando as primeiras linhas do dataframe
+print(df.head())
+
+# Limpeza dos dados: Preenchendo os valores ausentes com 0 ou NaN, conforme o caso
+df.fillna(0, inplace=True)
+
+# Convertendo colunas numéricas para o tipo correto
+df['Brasil (Prejuízo Econômico)'] = pd.to_numeric(df['Brasil (Prejuízo Econômico)'], errors='coerce')
+df['Brasil (Hectares Queimados)'] = pd.to_numeric(df['Brasil (Hectares Queimados)'], errors='coerce')
+df['Brasil (Focos de Incêndio)'] = pd.to_numeric(df['Brasil (Focos de Incêndio)'], errors='coerce')
+df['América do Sul (Total de Focos)'] = pd.to_numeric(df['América do Sul (Total de Focos)'], errors='coerce')
+df['Percentual de Focos no Brasil (América do Sul)'] = pd.to_numeric(df['Percentual de Focos no Brasil (América do Sul)'], errors='coerce')
+df['Aumento em Relação a 2023 (%)'] = pd.to_numeric(df['Aumento em Relação a 2023 (%)'], errors='coerce')
+
+# Análise e Resumo Estatístico
+print("Resumo Estatístico:")
+print(df.describe())
+
+# Gráfico 1: Evolução dos focos de incêndio no Brasil
+plt.figure(figsize=(10,6))
+sns.barplot(x='Período', y='Brasil (Focos de Incêndio)', data=df)
+plt.title('Evolução dos Focos de Incêndio no Brasil (2023-2024)')
+plt.ylabel('Focos de Incêndio')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Gráfico 2: Comparação dos Prejuízos Econômicos no Brasil
+plt.figure(figsize=(10,6))
+sns.barplot(x='Período', y='Brasil (Prejuízo Econômico)', data=df)
+plt.title('Prejuízos Econômicos devido a Incêndios no Brasil (2023-2024)')
+plt.ylabel('Prejuízo Econômico (em milhões)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Gráfico 3: Distribuição dos focos de incêndio na América do Sul nos últimos 48h
+plt.figure(figsize=(10,6))
+paises = ['Brasil', 'Bolívia', 'Peru', 'Argentina', 'Paraguai']
+focos = [df.loc[3, 'Brasil (Focos de Incêndio)'], df.loc[3, 'Bolívia'], df.loc[3, 'Peru'], df.loc[3, 'Argentina'], df.loc[3, 'Paraguai']]
+plt.pie(focos, labels=paises, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('Set2'))
+plt.title('Distribuição dos Focos de Incêndio na América do Sul (Últimas 48h)')
+plt.axis('equal')
+plt.show()
+
+# Gráfico 4: Comparação do aumento dos focos em relação a 2023
+plt.figure(figsize=(10,6))
+sns.barplot(x='Período', y='Aumento em Relação a 2023 (%)', data=df)
+plt.title('Aumento dos Focos de Incêndio em Relação a 2023')
+plt.ylabel('Aumento (%)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
